@@ -7,7 +7,8 @@ import KeepAliveA from '@/views/lifecycle/keepAliveA'
 import KeepAliveB from '@/views/lifecycle/keepAliveB'
 import KeepAliveC from '@/views/lifecycle/keepAliveC'
 import KeepAliveViews from '@/views/lifecycle/keepAliveViews'
-import MixinsView from '@/views/lifecycle/mixinsView'
+import MixinsView from '@/views/base/mixinsView'
+import Extends from '@/views/base/extends'
 
 Vue.use(Router)
 
@@ -73,6 +74,14 @@ export default new Router({
       path: '/mixinsView',
       name: 'MixinsView',
       component: MixinsView,
+      meta: {
+        keepAlive: false
+      }
+    },
+    {
+      path: '/extends',
+      name: 'extends',
+      component: Extends,
       meta: {
         keepAlive: false
       }

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import MixinsJs from '@/mixins/mixinsJs'
+import MixinsJs from '../../mixins/mixinsJs'
 export default {
   name: 'mixinsView',
   mixins: [MixinsJs],
@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     alertText () {
-      alert(this.text)
+      alert(this.text + '-----' + this.message)
     }
   },
   beforeCreate () {

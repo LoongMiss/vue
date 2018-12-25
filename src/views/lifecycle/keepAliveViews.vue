@@ -5,6 +5,7 @@
       <keep-alive>
         <!--一个keep-alive下面只能有一个组件-->
         <keep-alive-a></keep-alive-a>
+        <keep-alive-b></keep-alive-b>
       </keep-alive>
     </div>
   </div>

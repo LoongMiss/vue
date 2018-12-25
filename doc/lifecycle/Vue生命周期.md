@@ -61,14 +61,15 @@ function handleError (err, vm, info) {
 然后继续调用子组件的beforeCreate,create,beforeMount，如果有多个子组件会按照顺序依次调用，
 所有子组件都调用beforeMount钩子后，按照刚刚的顺序依次调用mount钩子，子组件都调用过mount
 钩子后，父组件调用mount钩子。
-````
-                父组件   子组件   同级子组件  同级子组件
 
-beforeCreate      |        |-2        |-4         |-6
-create            |        |          |           |
-beforeMount       |-1      |-3        |-5         |-7
-mount             |-11     |-8        |-9         |-10 
-````
+
+| | 父组件 | 子组件 | 同级子组件 | 同级子组件
+| --- | --- | --- | --- | --- |
+|**beforeCreate**      |-0      |-2        |-4         |-6
+|**create**            |        |          |           |
+|**beforeMount**       |-1      |-3        |-5         |-7
+|**mount**             |-11     |-8        |-9         |-10 
+
 
 ###更新
 那里更新就调用那里的钩子
@@ -79,75 +80,8 @@ mount             |-11     |-8        |-9         |-10
 beforeDestroy,destroyed两个钩子事件，如果有同级子组件依次调用beforeDestroy,destroyed钩子事件，所有
 子组件执行完成后调用父组件的destroyed钩子事件
 
-````
-                父组件   子组件   同级子组件  同级子组件
 
-beforeDestroy      |-1      |-2        |-4         |-6
-destroy            |-8      |-3        |-5         |-7
-````
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-
-beforeUpdate      |-1            
-updated           |-4               
-beforeDestroy              |-2     
-destroyed                  |-3     
-````
+| |父组件|子组件|同级子组件|同级子组件
+| --- | --- | --- | --- | --- |
+|**beforeDestroy**      |-1      |-2        |-4         |-6
+|**destroy**            |-8      |-3        |-5         |-7     
